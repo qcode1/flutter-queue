@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_queue_app/Screens/Login/components/background.dart';
-import 'package:flutter_queue_app/Screens/Welcome/welcome_screen.dart';
 import 'package:flutter_queue_app/components/rounded_input_field.dart';
 import 'package:flutter_queue_app/constants.dart';
 import 'package:flutter_linkify/flutter_linkify.dart';
