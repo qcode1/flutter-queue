@@ -8,8 +8,9 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        child: const Body(),
-        alignment: Alignment.center,
-        decoration: const BoxDecoration(color: Color(0xFFffffff)));
+      child: const Body(),
+      alignment: Alignment.center,
+      decoration: const BoxDecoration(color: Color(0xFFffffff)),
+    );
   }
 }

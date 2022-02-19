@@ -10,30 +10,33 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     // Total height and width of screen
     Size size = MediaQuery.of(context).size;
-    return SingleChildScrollView(
+    return Container(
+      padding: const EdgeInsets.all(20),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           const Text(
             "Welcome To InQueue",
             style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 35,
-                color: primaryColor,
-                decoration: TextDecoration.none),
+              fontWeight: FontWeight.bold,
+              fontSize: 35,
+              color: primaryColor,
+              decoration: TextDecoration.none,
+            ),
           ),
           SizedBox(height: size.height * 0.09),
-          Image.asset(
-            'assets/images/queue-2.jpg',
-            height: size.height * 0.3,
+          Expanded(
+            child: Image.asset(
+              'assets/images/queue-2.jpg',
+              height: size.height * 0.3,
+            ),
           ),
-          SizedBox(height: size.height * 0.04),
           RoundedButton(
             text: "LOGIN",
             press: () {
+              Navigator.of(context).pushNamed(LoginScreen.id);
               // This causes error
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const LoginScreen()));
 
               // Below works but takes you directly to login page
               // Future.delayed(Duration.zero, () {
@@ -43,6 +46,7 @@ class Body extends StatelessWidget {
               // });
             },
           ),
+          const SizedBox(height: 10),
           RoundedButton(
             text: "SIGNUP",
             color: lightGrey,

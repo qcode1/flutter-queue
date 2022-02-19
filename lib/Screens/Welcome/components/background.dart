@@ -12,14 +12,15 @@ class Background extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return SizedBox(
       height: size.height,
-      width: double.infinity,
+      width: size.width,
       child: Stack(
         children: <Widget>[
           Positioned(
-              child: Image.asset(
-            "assets/images/city.jpg",
-            width: size.width,
-          )),
+            child: Image.asset(
+              "assets/images/city.jpg",
+              width: size.width,
+            ),
+          ),
           child,
         ],
       ),
