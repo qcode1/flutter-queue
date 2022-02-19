@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_queue_app/Screens/Login/login_screen.dart';
-import 'package:flutter_queue_app/Screens/Welcome/components/background.dart';
+import 'package:flutter_queue_app/Screens/Welcome/welcome_screen.dart';
 import 'package:flutter_queue_app/components/rounded_button.dart';
 import 'package:flutter_queue_app/constants.dart';
 
@@ -18,7 +18,10 @@ class Body extends StatelessWidget {
           const Text(
             "Welcome To InQueue",
             style: TextStyle(
-                fontWeight: FontWeight.bold, fontSize: 35, color: primaryColor),
+                fontWeight: FontWeight.bold,
+                fontSize: 35,
+                color: primaryColor,
+                decoration: TextDecoration.none),
           ),
           SizedBox(height: size.height * 0.09),
           Image.asset(
@@ -28,7 +31,18 @@ class Body extends StatelessWidget {
           SizedBox(height: size.height * 0.04),
           RoundedButton(
             text: "LOGIN",
-            press: () {},
+            press: () {
+              // This causes error
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const LoginScreen()));
+
+              // Below works but takes you directly to login page
+              // Future.delayed(Duration.zero, () {
+              //   Navigator.of(context).pushAndRemoveUntil(
+              //       MaterialPageRoute(builder: (context) => LoginScreen()),
+              //       (route) => false);
+              // });
+            },
           ),
           RoundedButton(
             text: "SIGNUP",

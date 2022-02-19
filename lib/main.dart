@@ -18,8 +18,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
           primaryColor: primaryColor,
-          scaffoldBackgroundColor: const Color(0xFFEFEFEF)),
-      home: const LoginScreen(),
+          scaffoldBackgroundColor: Color(0xFFffffff)),
+      home: const WelcomeScreen(),
+      routes: {
+        // When navigating to the "/login" route, build the LoginScreen widget.
+        '/login': (context) => const LoginScreen(),
+      },
     );
   }
 }
